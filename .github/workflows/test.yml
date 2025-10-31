@@ -2,9 +2,7 @@ name: Run Tests
 
 on:
   push:
-    branches:
-      - master
-      - dev
+    branches: [master, development]
 
 jobs:
   lint:
