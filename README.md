@@ -1,6 +1,8 @@
 # 🧸 Pebble Bot — A Discord Bot
 
-[![Build Status](https://github.com/aarondesu/pebble_bot/actions/workflows/ci.yml/badge.svg)](https://github.com/aarondesu/pebble_bot/actions)
+[![Tests](https://github.com/aarondesu/baguio_bot/actions/workflows/main.yml/badge.svg)](https://github.com/aarondesu/baguio_bot/actions/workflows/main.yml)
+
+[![Build & Deploy](https://github.com/aarondesu/baguio_bot/actions/workflows/aws.yml/badge.svg)](https://github.com/aarondesu/baguio_bot/actions/workflows/aws.yml)
 
 A discord bot. Currently in WIP. More features will be developed in the future.
 
