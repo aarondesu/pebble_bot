@@ -1,0 +1,12 @@
+# Folders
+node_modules/
+.vscode/
+dist/
+
+# Files
+.env
+**/*.sql
+**/*.db
+
+# Logs
+**/*.log
