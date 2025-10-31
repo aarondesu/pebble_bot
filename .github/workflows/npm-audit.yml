@@ -1,0 +1,28 @@
+# Schedule an audti every week to check for vulnerabilities, if found create an issue on the repository
+
+name: npm audit
+
+on:
+  schedule:
+    - cron: '0 20 * * 0'
+
+jobs:
+  scans:
+    name: npm audit
+
+    runs-on: ubunti-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install dependencies
+        run: npm ci
+
+      - uses: oke-py/npm-audit-action@v3
+        with:
+          audit_level: moderate
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          issue_assignees: oke-py
+          issue_labels: vulnerability, test
+          dedupe_issues: true
