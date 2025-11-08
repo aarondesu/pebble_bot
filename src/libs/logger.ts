@@ -42,24 +42,9 @@ const fileFormat = winston.format.combine(
 );
 
 const logger = winston.createLogger({
-  level: "info",
+  level: "debug",
   format: consoleFormat,
-  transports: [
-    new winston.transports.File({
-      filename: "error.log",
-      level: "error",
-      format: fileFormat,
-      maxFiles: 10,
-      maxsize: 20,
-    }),
-    new winston.transports.File({
-      filename: "combined.log",
-      format: fileFormat,
-      maxFiles: 5,
-      maxsize: 20,
-    }),
-    new winston.transports.Console(),
-  ],
+  transports: [new winston.transports.Console()],
 });
 
 export default logger;
