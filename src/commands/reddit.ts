@@ -13,8 +13,6 @@ import { getRedditPost } from "../libs/reddit";
 const subredditLiteral = /r\/([a-zA-Z0-9_]+)\/?(?:hot|new|top)?/;
 
 export default class RedditCommand extends CommandModule {
-  webhookClient: WebhookClient;
-
   redditWebhookRepository: Repository<RedditWebhook> | undefined;
 
   constructor() {
@@ -59,10 +57,6 @@ export default class RedditCommand extends CommandModule {
           .setDescription("Removes all webhook integration from this channel"),
       )
       .setDefaultMemberPermissions(PermissionFlagsBits.ManageChannels);
-
-    this.webhookClient = new WebhookClient({
-      url: "https://discord.com/api/webhooks/1431620235521163376/4Ny5qk-qXmbIQuyxxV9exXEp_0V5HGxd4I_1YjkdiwOS8AYAGpYdXe3DUWE86mY9nwVi",
-    });
 
     this.redditWebhookRepository =
       this.client?.database.getRepository<RedditWebhook>(RedditWebhook);
